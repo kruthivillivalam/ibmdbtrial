@@ -1,0 +1,9 @@
+{
+  "apps": [{
+    "name": "your-app-name",
+    "script": "src/app.js",
+    "env": {
+      "production": true
+    }
+  }]
+}
