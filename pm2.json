@@ -1,0 +1,9 @@
+{
+  "apps": [{
+    "name": "ibmdbtrial",
+    "script": "src/server.js",
+    "env": {
+      "production": true
+    }
+  }]
+}

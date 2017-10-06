@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+<!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible"
+	content="IE=11; IE=10; IE=9; IE=8; IE=edge" />
+<script type="text/javascript" src="js\jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js\watson-speech.min.js"></script>
+<script type="text/javascript" src="js\stt_WSTT.js"></script>
+<script type="text/javascript" src="js\chatbox.js"></script>
+<script type="text/javascript" src="js\fetchDetails.js"></script>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css\chatbox.css">
+<link rel="stylesheet" href="css\one.css">
+<link rel="stylesheet" href="css\two.css">
+
+
+<style>
+.mySlides {
+	display: none;
+}
+</style>
+
+<title>プロジェクトマネージャのクエリダッシュボード</title>
+
+<!-- Bootstrap Core CSS -->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
+		style="background: black; height: auto">
+		<div class="container">
+			<!-- Prabhu : Start -->
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">言語を選択する</h4>
+							<!--Select Language -->
+						</div>
+						<div class="modal-body">
+							<select id="lang-selector">
+								<option disabled selected value>-- select an option --
+								</option>
+								<option value="EN">English</option>
+								<option value="JP">Japanese</option>
+							</select>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="modal fade" id="myModal2" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content"
+						style="width: 30%; position: absolute; right: -200px;">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">お問合せ</h4>
+						</div>
+						<div class="modal-body">
+							+91 7838319170 </br> ruchi.agarwal1@tcs.com </select>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- Prabhu : End -->
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a
+					style="color: floralwhite; padding: 20px; font-family: Palatino Linotype;"
+					class="navbar-brand" href="#" id="pageTitle">プロジェクトマネージャのクエリダッシュボード</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="navbar-collapse collapse in"
+				id="bs-example-navbar-collapse-1" aria-expanded="true"
+				style="height: auto; background: black;">
+				<ul class="nav navbar-nav">
+					<li><a
+						style="padding-top: 17px; background: black; position: absolute; right: 50px"
+						id="callback_charms" data-toggle="modal" href="#myModal2"><img
+							alt="" src="images\call-back.jpg" ><span id="supportDesk" style="font-family: Palatino Linotype;">サポート窓口</span></a></li>
+					<li><a style="display: none"
+						title="Hiddel element for chat popup" id="livechat_charms"></a> <a
+						title="Click here to start live chat."
+						style="cursor: pointer; background-color: black;"
+						id="lang_select_url" data-toggle="modal" href="#myModal"><img
+							alt="" src="images\chat.jpg"><span style="margin-left: 5px; font-family: Palatino Linotype;" id="clickToChat">チャット</span></a>
+					</li>
+
+				</ul>
+			</div>
+			<div class="navbar-collapse collapse in"
+			id="bs-example-navbar-collapse-1" aria-expanded="true"
+
+			style="height: auto; background: black;color: floralwhite;font-size: large;font-family: monospace; "><p align="center">Site best Viewed in Chrome 3+,Mozilla Firefox 45+,Microsoft Edge</p>
+
+			</div>
+
+			<div class="w3-cell-row" style="border-spacing: 30px">
+				<div class="w3-container w3-cell">
+					<div class="w3-content w3-section">
+						<img class="mySlides" src="images\s_1.jpg" style="width: 100%"> <img
+							class="mySlides" src="images\s_2.jpg" style="width: 100%"> <img
+							class="mySlides" src="images\s_3.jpg" style="width: 100%"> <img
+							class="mySlides" src="images\s_4.jpg" style="width: 100%"> <img
+							class="mySlides" src="images\s_5.jpg" style="width: 100%">
+					</div>
+				</div>
+
+				<div class="w3-container w3-cell" style="border-spacing: 30px">
+
+				</div>
+			</div>
+			<div class="w3-cell-row" style="border-spacing: 1px">
+				<div class="w3-container w3-cell"></div>
+				<div class="w3-container w3-cell" style="width: 380px"></div>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
+
+	<!-- Bootstrap Core JavaScript -->
+
+
+	<div class="popup-box chat-popup" id="qnimate" style="z-index: 2000;">
+		<div class="popup-head">
+			<div class="popup-head-left pull-left" id ="popupHeading"></div>
+			<div style="margin-top: -2px" class="popup-head-right pull-right">
+				<a><i id="removeClass"
+					class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a>
+			</div>
+		</div>
+
+		<div class="popup-messages">
+			<div class="direct-chat-messages">
+				<!--<div id="date123" class="chat-box-single-line">
+								<abbr id="date" class="timestamp">dd</abbr>
+					</div>-->
+
+				<div class="direct-chat-msg doted-border">
+					<div class="direct-chat-info clearfix">
+						<span class="direct-chat-name pull-left"><img
+							style="margin-left: -58px; width: 54px; border-radius: 55%;"
+							src="images/Capture.png" alt="User Avatar" class="img-circle" /></span>
+					</div>
+					<!-- /.direct-chat-info -->
+
+					<div style='margin-top: -47px; font-size: 12px'
+						class="direct-chat-text">
+						<span id="greetings"></span>
+					</div>
+					<div id="timeStamp" class="direct-chat-info clearfix">
+						<span id="time" class="direct-chat-timestamp pull-right"></span>
+					</div>
+
+				</div>
+				<img id="progress" style="height: 90px; margin-left: 75px;"
+					src="images\progress.gif" alt="User Avatar" class="img-circle">
+			</div>
+
+		</div>
+		<div>
+
+			<div class="popup-messages-footer">
+				<textarea name="status_message" id="status_message"
+					placeholder="Type a message..." rows="10" cols="40"></textarea>
+
+				<button id="send" type="submit" title="Type and enter" name="send"
+					value="Submit" class="btn btn-warning btn-sm">Send</button>
+				<span id="speech"
+					title="You can enter the digits through keypad only"
+					class="chatIcon"></span>
+
+
+				<div class="btn-footer"></div>
+			</div>
+
+
+		</div>
+	</div>
+	<script>
+  var myIndex = 0;
+  carousel();
+  function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}
+      x[myIndex-1].style.display = "block";
+      setTimeout(carousel, 7000); // Change image every 7 seconds
+  }
+  </script>
+</body>
+</html>
