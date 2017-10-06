@@ -2,7 +2,7 @@ FROM keymetrics/pm2:latest
 MAINTAINER Prashanth Madi <prashanthrmadi@gmail.com>
 
 # Install openssh for web-ssh access from kudu
-RUN apt-get update && apt-get install \
+RUN apt update && apt install \
       --no-install-recommends --no-install-suggests -y \
       openssh-server \
       supervisor \
