@@ -1,12 +1,16 @@
-FROM keymetrics/pm2:latest
+FROM node:8
 MAINTAINER Prashanth Madi <prashanthrmadi@gmail.com>
 
 # Install openssh for web-ssh access from kudu
-RUN apt update && apt install \
+RUN apt-get update && apt-get install \
       --no-install-recommends --no-install-suggests -y \
       openssh-server \
       supervisor \
       && echo "root:Docker!" | chpasswd
+
+RUN npm install pm2 -g
+
+WORKDIR /app
 
 # COPY Config Files
 COPY src src/
