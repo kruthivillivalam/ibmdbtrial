@@ -1,7 +1,7 @@
 {
   "apps": [{
-    "name": "your-app-name",
-    "script": "src/app.js",
+    "name": "ibmdbtrial",
+    "script": "src/server.js",
     "env": {
       "production": true
     }
